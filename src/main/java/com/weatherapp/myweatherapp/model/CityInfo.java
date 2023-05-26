@@ -12,51 +12,69 @@ public class CityInfo {
   String description;
 
   @JsonProperty("currentConditions")
-  CurrentConditions currentConditions;
+  public CurrentConditions currentConditions;
 
   @JsonProperty("days")
   List<Days> days;
 
-  static class CurrentConditions {
-    @JsonProperty("temp")
-    String currentTemperature;
+  public String getAddress() {
+        return this.address;
+    }
 
-    @JsonProperty("sunrise")
-    String sunrise;
-
-    @JsonProperty("sunset")
-    String sunset;
-
-    @JsonProperty("feelslike")
-    String feelslike;
-
-    @JsonProperty("humidity")
-    String humidity;
-
-    @JsonProperty("conditions")
-    String conditions;
+  public CurrentConditions getCurrentConditions() {
+    return this.currentConditions;
   }
 
-  static class Days {
-
-    @JsonProperty("datetime")
-    String date;
-
+  public static class CurrentConditions {
     @JsonProperty("temp")
-    String currentTemperature;
+    public String currentTemperature;
 
-    @JsonProperty("tempmax")
-    String maxTemperature;
+    @JsonProperty("sunrise")
+    public String sunrise;
 
-    @JsonProperty("tempmin")
-    String minTemperature;
+    @JsonProperty("sunset")
+    public String sunset;
+
+    @JsonProperty("feelslike")
+    public String feelslike;
+
+    @JsonProperty("humidity")
+    public String humidity;
 
     @JsonProperty("conditions")
-    String conditions;
+    public String conditions;
+
+    public String getSunrise() {
+      return this.sunrise;
+    }
+
+    public String getSunset() {
+      return this.sunset;
+    }
+    
+    public String getConditions() {
+      return this.conditions;
+    }
+  }
+
+  public static class Days {
+    @JsonProperty("datetime")
+    public String date;
+
+    @JsonProperty("temp")
+    public String currentTemperature;
+
+    @JsonProperty("tempmax")
+    public String maxTemperature;
+
+    @JsonProperty("tempmin")
+    public String minTemperature;
+
+    @JsonProperty("conditions")
+    public String conditions;
 
     @JsonProperty("description")
-    String description;
-
+    public String description;
   }
 
 }
