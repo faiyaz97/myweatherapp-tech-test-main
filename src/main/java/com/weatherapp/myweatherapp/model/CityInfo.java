@@ -19,7 +19,7 @@ public class CityInfo {
 
   public String getAddress() {
         return this.address;
-    }
+  }
 
   public CurrentConditions getCurrentConditions() {
     return this.currentConditions;
