@@ -56,6 +56,7 @@ class WeatherServiceTest {
     assertEquals("City1 has longer daylight hours.", result);
   }
 
+  @Test
   void compareDaylightHours_City2HasLongerDaylight() {
     // Given
     when(currentConditions1.getSunrise()).thenReturn("07:00:00");
@@ -68,6 +69,7 @@ class WeatherServiceTest {
     assertEquals("City2 has longer daylight hours.", result);
   }
 
+  @Test
   void compareDaylightHours_BothCitiesHaveEqualDaylight() {
     // Given
     when(currentConditions1.getSunrise()).thenReturn("07:00:00");
@@ -77,7 +79,7 @@ class WeatherServiceTest {
 
     // When
     String result = weatherService.compareDaylightHours("City1", "City2");
-    assertEquals("Both cities have equal daylight hours.", result);
+    assertEquals("Both City1 and City2 have the same daylight hours.", result);
   }
 
   @Test
